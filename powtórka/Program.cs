@@ -163,28 +163,28 @@ namespace powtórka
 
         public static void CheckDailyEarnings(int hours, string currencyCode) 
         {
-            string wariant1AmountInPLN = String.Format(CultureInfo.GetCultureInfo("pl"), "{0:c}", Wariant1(hours));
-            string wariant2AmountInPLN = String.Format(CultureInfo.GetCultureInfo("pl"), "{0:c}", Wariant2(hours));
+            string amountInCurrencyV1 = String.Format(CultureInfo.GetCultureInfo("pl"), "{0:c}", Wariant1(hours));
+            string amountInCurrencyV2 = String.Format(CultureInfo.GetCultureInfo("pl"), "{0:c}", Wariant2(hours));
            
 
             if (Wariant1(hours) > Wariant2(hours))
             {
-                Console.WriteLine($"Stawka 50/h da: {wariant1AmountInPLN} za {hours} godzin.");
+                Console.WriteLine($"Stawka 50/h da: {amountInCurrencyV1} za {hours} godzin.");
                 Console.WriteLine($"Stawka 0.1 za pierwsza godzinę i za każdą nastepna podwojoną kwote do tej pory zarobionych pieniędzy da: " +
-                    $"{wariant2AmountInPLN} za {hours} godzin.");
+                    $"{amountInCurrencyV2} za {hours} godzin.");
                 Console.WriteLine("Wybierz stałą stawkę");
             }
             else if (Wariant1(hours) < Wariant2(hours))
             {
-                Console.WriteLine($"Stawka 50/h da: {wariant1AmountInPLN} za {hours} godzin.");
+                Console.WriteLine($"Stawka 50/h da: {amountInCurrencyV1} za {hours} godzin.");
                 Console.WriteLine($"Stawka 0.1 za pierwsza godzinę i za każdą nastepna podwojoną kwote do tej pory zarobionych pieniędzy da: " +
-                    $"{wariant2AmountInPLN} za {hours} godzin.");
+                    $"{amountInCurrencyV2} za {hours} godzin.");
                 Console.WriteLine("Wybierz stawkę rosnącą");
             }else
             {
-                Console.WriteLine($"Stawka 50/h da: {wariant1AmountInPLN} za {hours} godzin.");
+                Console.WriteLine($"Stawka 50/h da: {amountInCurrencyV1} za {hours} godzin.");
                 Console.WriteLine($"Stawka 0.1 za pierwsza godzinę i za każdą nastepna podwojoną kwote do tej pory zarobionych pieniędzy da: " +
-                    $"{wariant2AmountInPLN} za {hours} godzin.");
+                    $"{amountInCurrencyV2} za {hours} godzin.");
                 Console.WriteLine("To nie ma znaczenia co wybierzesz");
             }
         }
